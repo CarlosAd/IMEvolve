@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/main.dir/src/funcaoObjetivo.o"
   "CMakeFiles/main.dir/src/main.o"
-  "CMakeFiles/main.dir/src/fitnessFunction.o"
   "bin/main.pdb"
   "bin/main"
 )

@@ -49,9 +49,32 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
+CMakeFiles/main.dir/src/funcaoObjetivo.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/funcaoObjetivo.o: ../src/funcaoObjetivo.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/Documents/IME/IC/IMEvolve/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/funcaoObjetivo.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/funcaoObjetivo.o -c /home/carlos/Documents/IME/IC/IMEvolve/src/funcaoObjetivo.cpp
+
+CMakeFiles/main.dir/src/funcaoObjetivo.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/funcaoObjetivo.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/carlos/Documents/IME/IC/IMEvolve/src/funcaoObjetivo.cpp > CMakeFiles/main.dir/src/funcaoObjetivo.i
+
+CMakeFiles/main.dir/src/funcaoObjetivo.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/funcaoObjetivo.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/carlos/Documents/IME/IC/IMEvolve/src/funcaoObjetivo.cpp -o CMakeFiles/main.dir/src/funcaoObjetivo.s
+
+CMakeFiles/main.dir/src/funcaoObjetivo.o.requires:
+.PHONY : CMakeFiles/main.dir/src/funcaoObjetivo.o.requires
+
+CMakeFiles/main.dir/src/funcaoObjetivo.o.provides: CMakeFiles/main.dir/src/funcaoObjetivo.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/funcaoObjetivo.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/funcaoObjetivo.o.provides
+
+CMakeFiles/main.dir/src/funcaoObjetivo.o.provides.build: CMakeFiles/main.dir/src/funcaoObjetivo.o
+
 CMakeFiles/main.dir/src/main.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.o: ../src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/Documents/IME/IC/IMEvolve/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/Documents/IME/IC/IMEvolve/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/main.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.o -c /home/carlos/Documents/IME/IC/IMEvolve/src/main.cpp
 
@@ -72,39 +95,16 @@ CMakeFiles/main.dir/src/main.o.provides: CMakeFiles/main.dir/src/main.o.requires
 
 CMakeFiles/main.dir/src/main.o.provides.build: CMakeFiles/main.dir/src/main.o
 
-CMakeFiles/main.dir/src/fitnessFunction.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/fitnessFunction.o: ../src/fitnessFunction.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/Documents/IME/IC/IMEvolve/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/fitnessFunction.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/fitnessFunction.o -c /home/carlos/Documents/IME/IC/IMEvolve/src/fitnessFunction.cpp
-
-CMakeFiles/main.dir/src/fitnessFunction.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/fitnessFunction.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/carlos/Documents/IME/IC/IMEvolve/src/fitnessFunction.cpp > CMakeFiles/main.dir/src/fitnessFunction.i
-
-CMakeFiles/main.dir/src/fitnessFunction.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/fitnessFunction.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/carlos/Documents/IME/IC/IMEvolve/src/fitnessFunction.cpp -o CMakeFiles/main.dir/src/fitnessFunction.s
-
-CMakeFiles/main.dir/src/fitnessFunction.o.requires:
-.PHONY : CMakeFiles/main.dir/src/fitnessFunction.o.requires
-
-CMakeFiles/main.dir/src/fitnessFunction.o.provides: CMakeFiles/main.dir/src/fitnessFunction.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/fitnessFunction.o.provides.build
-.PHONY : CMakeFiles/main.dir/src/fitnessFunction.o.provides
-
-CMakeFiles/main.dir/src/fitnessFunction.o.provides.build: CMakeFiles/main.dir/src/fitnessFunction.o
-
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/main.o" \
-"CMakeFiles/main.dir/src/fitnessFunction.o"
+"CMakeFiles/main.dir/src/funcaoObjetivo.o" \
+"CMakeFiles/main.dir/src/main.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
+bin/main: CMakeFiles/main.dir/src/funcaoObjetivo.o
 bin/main: CMakeFiles/main.dir/src/main.o
-bin/main: CMakeFiles/main.dir/src/fitnessFunction.o
 bin/main: CMakeFiles/main.dir/build.make
 bin/main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable bin/main"
@@ -114,8 +114,8 @@ bin/main: CMakeFiles/main.dir/link.txt
 CMakeFiles/main.dir/build: bin/main
 .PHONY : CMakeFiles/main.dir/build
 
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/funcaoObjetivo.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/main.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/fitnessFunction.o.requires
 .PHONY : CMakeFiles/main.dir/requires
 
 CMakeFiles/main.dir/clean:

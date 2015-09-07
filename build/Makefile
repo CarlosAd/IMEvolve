@@ -112,19 +112,19 @@ main/fast:
 .PHONY : main/fast
 
 # target to build an object file
-src/fitnessFunction.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/fitnessFunction.o
-.PHONY : src/fitnessFunction.o
+src/funcaoObjetivo.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/funcaoObjetivo.o
+.PHONY : src/funcaoObjetivo.o
 
 # target to preprocess a source file
-src/fitnessFunction.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/fitnessFunction.i
-.PHONY : src/fitnessFunction.i
+src/funcaoObjetivo.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/funcaoObjetivo.i
+.PHONY : src/funcaoObjetivo.i
 
 # target to generate assembly for a file
-src/fitnessFunction.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/fitnessFunction.s
-.PHONY : src/fitnessFunction.s
+src/funcaoObjetivo.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/funcaoObjetivo.s
+.PHONY : src/funcaoObjetivo.s
 
 # target to build an object file
 src/main.o:
@@ -150,9 +150,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... rebuild_cache"
-	@echo "... src/fitnessFunction.o"
-	@echo "... src/fitnessFunction.i"
-	@echo "... src/fitnessFunction.s"
+	@echo "... src/funcaoObjetivo.o"
+	@echo "... src/funcaoObjetivo.i"
+	@echo "... src/funcaoObjetivo.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
