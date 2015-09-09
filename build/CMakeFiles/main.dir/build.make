@@ -72,9 +72,32 @@ CMakeFiles/main.dir/src/funcaoObjetivo.o.provides: CMakeFiles/main.dir/src/funca
 
 CMakeFiles/main.dir/src/funcaoObjetivo.o.provides.build: CMakeFiles/main.dir/src/funcaoObjetivo.o
 
+CMakeFiles/main.dir/src/individuo.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/individuo.o: ../src/individuo.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/Documents/IME/IC/IMEvolve/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/individuo.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/individuo.o -c /home/carlos/Documents/IME/IC/IMEvolve/src/individuo.cpp
+
+CMakeFiles/main.dir/src/individuo.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/individuo.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/carlos/Documents/IME/IC/IMEvolve/src/individuo.cpp > CMakeFiles/main.dir/src/individuo.i
+
+CMakeFiles/main.dir/src/individuo.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/individuo.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/carlos/Documents/IME/IC/IMEvolve/src/individuo.cpp -o CMakeFiles/main.dir/src/individuo.s
+
+CMakeFiles/main.dir/src/individuo.o.requires:
+.PHONY : CMakeFiles/main.dir/src/individuo.o.requires
+
+CMakeFiles/main.dir/src/individuo.o.provides: CMakeFiles/main.dir/src/individuo.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/individuo.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/individuo.o.provides
+
+CMakeFiles/main.dir/src/individuo.o.provides.build: CMakeFiles/main.dir/src/individuo.o
+
 CMakeFiles/main.dir/src/main.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.o: ../src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/Documents/IME/IC/IMEvolve/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/Documents/IME/IC/IMEvolve/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/main.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.o -c /home/carlos/Documents/IME/IC/IMEvolve/src/main.cpp
 
@@ -98,12 +121,14 @@ CMakeFiles/main.dir/src/main.o.provides.build: CMakeFiles/main.dir/src/main.o
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/src/funcaoObjetivo.o" \
+"CMakeFiles/main.dir/src/individuo.o" \
 "CMakeFiles/main.dir/src/main.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 bin/main: CMakeFiles/main.dir/src/funcaoObjetivo.o
+bin/main: CMakeFiles/main.dir/src/individuo.o
 bin/main: CMakeFiles/main.dir/src/main.o
 bin/main: CMakeFiles/main.dir/build.make
 bin/main: CMakeFiles/main.dir/link.txt
@@ -115,6 +140,7 @@ CMakeFiles/main.dir/build: bin/main
 .PHONY : CMakeFiles/main.dir/build
 
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/funcaoObjetivo.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/individuo.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/main.o.requires
 .PHONY : CMakeFiles/main.dir/requires
 

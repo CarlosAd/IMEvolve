@@ -1,1 +1,1 @@
-#include "funcaoObjetivo.h"
+#include "../include/funcaoObjetivo.h"

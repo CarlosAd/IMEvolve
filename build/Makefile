@@ -127,6 +127,21 @@ src/funcaoObjetivo.s:
 .PHONY : src/funcaoObjetivo.s
 
 # target to build an object file
+src/individuo.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/individuo.o
+.PHONY : src/individuo.o
+
+# target to preprocess a source file
+src/individuo.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/individuo.i
+.PHONY : src/individuo.i
+
+# target to generate assembly for a file
+src/individuo.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/individuo.s
+.PHONY : src/individuo.s
+
+# target to build an object file
 src/main.o:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.o
 .PHONY : src/main.o
@@ -153,6 +168,9 @@ help:
 	@echo "... src/funcaoObjetivo.o"
 	@echo "... src/funcaoObjetivo.i"
 	@echo "... src/funcaoObjetivo.s"
+	@echo "... src/individuo.o"
+	@echo "... src/individuo.i"
+	@echo "... src/individuo.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
