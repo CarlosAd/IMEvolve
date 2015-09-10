@@ -1,2 +1,0 @@
-/home/vinivice/academico/inic_cient/IMEvolve/build/include/CMakeFiles/bibliotecas.dir
-/home/vinivice/academico/inic_cient/IMEvolve/build/CMakeFiles/main.dir

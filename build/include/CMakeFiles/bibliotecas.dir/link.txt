@@ -1,2 +1,0 @@
-/usr/bin/ar cr libbibliotecas.a  CMakeFiles/bibliotecas.dir/__/src/funcaoObjetivo.cpp.o CMakeFiles/bibliotecas.dir/__/src/individuo.cpp.o
-/usr/bin/ranlib libbibliotecas.a
