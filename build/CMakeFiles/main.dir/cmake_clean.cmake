@@ -1,7 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/main.dir/src/funcaoObjetivo.o"
-  "CMakeFiles/main.dir/src/individuo.o"
-  "CMakeFiles/main.dir/src/main.o"
+  "CMakeFiles/main.dir/main.cpp.o"
   "bin/main.pdb"
   "bin/main"
 )

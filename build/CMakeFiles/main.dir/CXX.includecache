@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/carlos/Documents/IME/IC/IMEvolve/include/individuo.h
+../include/individuo.h
 vector
 -
 
-/home/carlos/Documents/IME/IC/IMEvolve/src/main.cpp
+/home/vinivice/academico/inic_cient/IMEvolve/main.cpp
 ../include/individuo.h
-/home/carlos/Documents/IME/IC/IMEvolve/include/individuo.h
+/home/vinivice/academico/inic_cient/include/individuo.h
 iostream
 -
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/vinivice/academico/inic_cient/IMEvolve
+# Install script for directory: /home/vinivice/academico/inic_cient/IMEvolve/include
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,20 +32,3 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   SET(CMAKE_INSTALL_SO_NO_EXE "1")
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
-IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  INCLUDE("/home/vinivice/academico/inic_cient/IMEvolve/build/include/cmake_install.cmake")
-  INCLUDE("/home/vinivice/academico/inic_cient/IMEvolve/build/src/cmake_install.cmake")
-
-ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
-
-IF(CMAKE_INSTALL_COMPONENT)
-  SET(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-ELSE(CMAKE_INSTALL_COMPONENT)
-  SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
-ENDIF(CMAKE_INSTALL_COMPONENT)
-
-FILE(WRITE "/home/vinivice/academico/inic_cient/IMEvolve/build/${CMAKE_INSTALL_MANIFEST}" "")
-FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/vinivice/academico/inic_cient/IMEvolve/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
-ENDFOREACH(file)
