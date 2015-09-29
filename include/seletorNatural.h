@@ -2,7 +2,7 @@
 #define IMEVOLVE_INCLUDE_SELETORNATURAL_H
 #include "individuo.h"
 
-using Populacao = vector<Individuo>;
+using Populacao = std::vector<Individuo>;
 
 class SeletorNatural{
 private:

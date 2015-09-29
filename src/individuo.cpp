@@ -18,13 +18,13 @@ unsigned char Individuo::operator[] (const int &posicao) const{
 }
 
 double Individuo::adaptacao() const{
-  return valorAdaptacao_;
+  return valorDeAdaptacao_;
 }
 
 int Individuo::tamanho () const {
   return cromossomos_.size();
 }
 
-void atribuirValorDeAdaptacao(const double novoValorDeAdaptacao){
-  valorDeAdaptacao = novoValorDeAdaptacao;
+void Individuo::atribuirValorDeAdaptacao(const double novoValorDeAdaptacao){
+  valorDeAdaptacao_ = novoValorDeAdaptacao;
 }
