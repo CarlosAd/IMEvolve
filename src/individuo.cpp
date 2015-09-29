@@ -1,4 +1,4 @@
-#include "../include/individuo.h"
+#include "individuo.h"
 #include <algorithm>
 #include <random>
 
@@ -13,20 +13,18 @@ Individuo::Individuo (const int &quantidadeDeCromossomos) : valorDeAdaptacao_ (0
   }
 }
 
-void Individuo::reproducao (Individuo *par) {
-  std::random_device rd;
-
-  int pontoDeCorte = rd() % tamanho();
-
-  for (int index = pontoDeCorte; index < tamanho(); index++) {
-    std::swap (cromossomos_[index], par->cromossomos_[index]);
-  }
-}
-
 unsigned char Individuo::operator[] (const int &posicao) const{
   return cromossomos_[posicao];
 }
 
+double Individuo::adaptacao() const{
+  return valorAdaptacao_;
+}
+
 int Individuo::tamanho () const {
   return cromossomos_.size();
+}
+
+void atribuirValorDeAdaptacao(const double novoValorDeAdaptacao){
+  valorDeAdaptacao = novoValorDeAdaptacao;
 }

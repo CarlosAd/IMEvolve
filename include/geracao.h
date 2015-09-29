@@ -2,31 +2,39 @@
 #define IMEVOLVE_INCLUDE_GERACAO_H
 
 #include <vector>
+#include "individuo.h"
+#include "funcaoObjetivo.h"
+#include "seletorNatural.h"
+#include "funcaoReproducao.h"
+#include "funcaoMutacao.h"
 
-using Populacao = vector<Individuo>
+using Populacao = std::vector<Individuo>;
 
 class Geracao{
 protected:
   FuncaoObjetivo &funcaoObjetivo;
   SeletorNatural &seletorNatural; 
+  FuncaoMutacao &funcaoMutacao;
+  FuncaoReproducao &fucaoReproducao;
+
   Populacao populacao, populacaoAuxiliar;
-  unsigned int elitismo, tamanhoPopulacao;
-  double taxaMutacao;
-  virtual void mutacao(int indice);
-  virtual void reproducao(int pai, int mae);
+  unsigned int tamanhoPopulacao, elitismo;
     
 
 public:
-  Geracao(const FuncaoObjetivo &ifuncaoObjetivo, 
-          const SeletorNatural &iseletorNatural, 
-          const int itamanhoPopulacao, 
-          const int ielitismo, 
-          const double itaxaMutacao):
-           funcaoObjetivo(ifuncaoObjetivo),
-           seletorNatural(iseletorNatural),
-           tamanhoPopulacao(itamanhoPopulacao),
-           elitismo(ielitismo),
-           taxaMutacao(itaxaMutacao);
+  Geracao(FuncaoObjetivo &ifuncaoObjetivo, 
+          SeletorNatural &iseletorNatural, 
+          FuncaoMutacao &ifuncaoMutacao,
+          FuncaoReproducao &ifucaoReproducao,
+          FuncaoEvoluir &ifuncaoEvoluir,
+          const unsigned int itamanhoPopulacao, 
+          const unsigned int ielitismo): 
+          funcaoObjetivo(ifuncaoObjetivo),
+          seletorNatural(iseletorNatural),
+          funcaoMutacao(ifuncaoMutacao),
+          funcaoReproducao(ifucaoReproducao),
+          tamanhoPopulacao(itamanhoPopulacao),
+          elitismo(ielitismo){}
 
   virtual void evoluir();
 

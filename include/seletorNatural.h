@@ -1,8 +1,15 @@
 #ifndef IMEVOLVE_INCLUDE_SELETORNATURAL_H
 #define IMEVOLVE_INCLUDE_SELETORNATURAL_H
+#include "individuo.h"
+
+using Populacao = vector<Individuo>;
 
 class SeletorNatural{
-  virtual void selecionarParceiros(const Geracao &geracao, int &pai, int &mae);
+private:
+  Populacao &populacao;
+public:
+  SeletorNatural(Populacao& ipopulacao):populacao(ipopulacao){}
+  virtual void selecionarParceiros(Individuo& pai, Individuo& mae);
 
 };
 

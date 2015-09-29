@@ -6,19 +6,18 @@
 using cromo = std::vector< unsigned char >;
 
 class Individuo {
-private:
+//private:
+public:
   cromo cromossomos_;
   double valorDeAdaptacao_;
   
 public:
   Individuo (const cromo &novosCromossomos);
   Individuo (const int &quantidadeDeCromossomos);
-  //void reproducao (Individuo *par);
-  //bool mutacao (const double &taxaDeMutacao);
   unsigned char operator[] (const int &posicao) const;
   double adaptacao () const;
   int tamanho () const;
-  void atribuirValorDeAdaptacao (const double &novoValorDeAdaptacao);
+  void atribuirValorDeAdaptacao (const double novoValorDeAdaptacao);
 };
 
 #endif
