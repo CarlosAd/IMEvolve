@@ -15,26 +15,21 @@ protected:
   FuncaoObjetivo &funcaoObjetivo;
   SeletorNatural &seletorNatural; 
   FuncaoMutacao &funcaoMutacao;
-  FuncaoReproducao &fucaoReproducao;
+  FuncaoReproducao &funcaoReproducao;
 
   Populacao populacao, populacaoAuxiliar;
   unsigned int tamanhoPopulacao, elitismo;
     
 
 public:
-  Geracao(FuncaoObjetivo &ifuncaoObjetivo, 
-          SeletorNatural &iseletorNatural, 
+  Geracao(FuncaoObjetivo &ifuncaoObjetivo,
+          SeletorNatural &iseletorNatural,
           FuncaoMutacao &ifuncaoMutacao,
-          FuncaoReproducao &ifucaoReproducao,
-          FuncaoEvoluir &ifuncaoEvoluir,
-          const unsigned int itamanhoPopulacao, 
-          const unsigned int ielitismo): 
-          funcaoObjetivo(ifuncaoObjetivo),
-          seletorNatural(iseletorNatural),
-          funcaoMutacao(ifuncaoMutacao),
-          funcaoReproducao(ifucaoReproducao),
-          tamanhoPopulacao(itamanhoPopulacao),
-          elitismo(ielitismo){}
+          FuncaoReproducao &ifuncaoReproducao);
+
+  void gerarPopulacao(const unsigned int& itamanhoCromossomo,
+                const unsigned int& itamanhoPopulacao,
+                const unsigned int& ielitismo);
 
   virtual void evoluir();
 
