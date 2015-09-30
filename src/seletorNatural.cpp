@@ -1,7 +1,7 @@
 #include "seletorNatural.h"
 #include <random>
 
-void SeletorNatural::selecionarParceiros(Individuo& pai, Individuo& mae){
+void SeletorNatural::selecionarParceiros(Populacao& populacao){
   std::default_random_engine gerador;
   double total = 0, escolha;
   int i, tamanho = populacao.size();
@@ -20,7 +20,7 @@ void SeletorNatural::selecionarParceiros(Individuo& pai, Individuo& mae){
     
     if(escolha <= 0)
     {
-      pai = mae = populacao[i];
+      pai = mae = i;
       i = tamanho;
     }
     
@@ -31,14 +31,22 @@ void SeletorNatural::selecionarParceiros(Individuo& pai, Individuo& mae){
 
     for(i = 0; i < tamanho; i++)
     {
-      escolha -= (populacao[i].adaptacao()/total);
+      escolha -= populacao[i].adaptacao();
       
       if(escolha <= 0)
       {
-        mae = populacao[i];
+        mae = i;
         i = tamanho;
       }
       
     } 
-  }while(&pai == &mae);
+  }while(pai == mae);
+}
+
+unsigned int SeletorNatural::retornaPai(){
+  return pai;
+}
+
+unsigned int SeletorNatural::retornaMae(){
+  return mae;
 }

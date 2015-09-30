@@ -5,11 +5,12 @@
 using Populacao = std::vector<Individuo>;
 
 class SeletorNatural{
-private:
-  Populacao &populacao;
+protected:
+  unsigned int pai, mae;
 public:
-  SeletorNatural(Populacao& ipopulacao):populacao(ipopulacao){}
-  virtual void selecionarParceiros(Individuo& pai, Individuo& mae);
+  virtual void selecionarParceiros(Populacao& populacao);
+  unsigned int retornaPai();
+  unsigned int retornaMae();
 
 };
 
