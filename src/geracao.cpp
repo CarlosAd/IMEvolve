@@ -64,5 +64,4 @@ void Geracao::evoluir() {
   }
 
   std::swap_ranges (populacaoAuxiliar.begin(), populacaoAuxiliar.end(), populacao.begin() + elitismo);
-  //std::swap (populacaoAuxiliar.begin(), populacao.begin() + elitismo);
 }
