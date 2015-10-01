@@ -31,16 +31,29 @@ void Geracao::calcularAdaptacaoPopulacao() {
   for (int indice = 0; indice < tamanhoPopulacao; indice++) {
     valorDeAdaptacao = funcaoObjetivo(populacao[indice]);
     populacao[indice].atribuirValorDeAdaptacao(valorDeAdaptacao);
-    valorDeAdaptacaoTotal += valorDeAdaptacao;
   }
   sort (populacao.rbegin(), populacao.rend());
 }
 
+void Geracao::calcularAdaptacaoTotal() {
+  valorDeAdaptacaoTotal = 0;
+  for (int indice = 0; indice < tamanhoPopulacao; indice++) {
+    valorDeAdaptacaoTotal += populacao[indice].adaptacao();
+  }
+}
+
 void Geracao::evoluir() {
+  calcularAdaptacaoPopulacao();
+  calcularAdaptacaoTotal();
+
+  for(int indice = 0; indice < elitismo; indice++){
+    funcaoMutacao.mutacao(populacao[indice]);
+  }
+
   int numeroDeFilhos = tamanhoPopulacao - elitismo;
   Individuo pai, mae;
 
-  for (int indice = 0; indice < numeroDeFilhos; indice++) {
+  for (indice = 0; indice < numeroDeFilhos; indice++) {
     seletorNatural.selecionarParceiros(populacao, valorDeAdaptacaoTotal);
 
     pai = populacao[seletorNatural.retornaPai()];
@@ -51,5 +64,5 @@ void Geracao::evoluir() {
   }
 
   std::swap_ranges (populacaoAuxiliar.begin(), populacaoAuxiliar.end(), populacao.begin() + elitismo);
-  calcularAdaptacaoPopulacao();
+  //std::swap (populacaoAuxiliar.begin(), populacao.begin() + elitismo);
 }
