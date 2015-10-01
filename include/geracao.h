@@ -33,6 +33,7 @@ public:
                       unsigned int ielitismo);
 
   void calcularAdaptacaoPopulacao();
+  void calcularAdaptacaoTotal();
   virtual void evoluir();
 
   Individuo& pegarMaisAdaptado();

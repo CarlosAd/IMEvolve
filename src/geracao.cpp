@@ -24,25 +24,33 @@ void Geracao::gerarPopulacao(unsigned int itamanhoCromossomo,
   for (int indice = 0; indice < itamanhoPopulacao; indice++) {
     populacao.push_back(Individuo(itamanhoCromossomo));
   }
-
-  calcularAdaptacaoPopulacao();
 }
 
 void Geracao::calcularAdaptacaoPopulacao() {
+//paralelizar esse método
   double valorDeAdaptacao;
   for (int indice = 0; indice < tamanhoPopulacao; indice++) {
     valorDeAdaptacao = funcaoObjetivo(populacao[indice]);
     populacao[indice].atribuirValorDeAdaptacao(valorDeAdaptacao);
-    valorDeAdaptacaoTotal += valorDeAdaptacao;
   }
   sort (populacao.rbegin(), populacao.rend());
 }
 
+void Geracao::calcularAdaptacaoTotal() {
+  valorDeAdaptacaoTotal = 0;
+  for (int indice = 0; indice < tamanhoPopulacao; indice++) {
+    valorDeAdaptacaoTotal += populacao[indice].adaptacao();
+  }
+}
+
 void Geracao::evoluir() {
+
+  calcularAdaptacaoTotal();
   int numeroDeFilhos = tamanhoPopulacao - elitismo;
   Individuo pai, mae;
 
-  for (int indice = 0; indice < numeroDeFilhos; indice++) {
+  int indice;
+  for (indice = 0; indice < numeroDeFilhos; indice++) {
     seletorNatural.selecionarParceiros(populacao, valorDeAdaptacaoTotal);
 
     pai = populacao[seletorNatural.retornaPai()];
@@ -53,5 +61,6 @@ void Geracao::evoluir() {
   }
 
   std::swap_ranges (populacaoAuxiliar.begin(), populacaoAuxiliar.end(), populacao.begin() + elitismo);
+
   calcularAdaptacaoPopulacao();
 }
