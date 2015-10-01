@@ -22,8 +22,6 @@ void Geracao::gerarPopulacao(unsigned int itamanhoCromossomo,
   for (int indice = 0; indice < itamanhoPopulacao; indice++) {
     populacao.push_back(Individuo(itamanhoCromossomo));
   }
-
-  calcularAdaptacaoPopulacao();
 }
 
 void Geracao::calcularAdaptacaoPopulacao() {
@@ -43,13 +41,8 @@ void Geracao::calcularAdaptacaoTotal() {
 }
 
 void Geracao::evoluir() {
-  calcularAdaptacaoPopulacao();
+
   calcularAdaptacaoTotal();
-
-  for(int indice = 0; indice < elitismo; indice++){
-    funcaoMutacao.mutacao(populacao[indice]);
-  }
-
   int numeroDeFilhos = tamanhoPopulacao - elitismo;
   Individuo pai, mae;
 
@@ -63,5 +56,11 @@ void Geracao::evoluir() {
     funcaoMutacao.mutacao (populacaoAuxiliar[indice]);
   }
 
+  for(int indice = 0; indice < elitismo; indice++){
+    funcaoMutacao.mutacao(populacao[indice]);
+  }
+
   std::swap_ranges (populacaoAuxiliar.begin(), populacaoAuxiliar.end(), populacao.begin() + elitismo);
+
+  calcularAdaptacaoPopulacao();
 }
