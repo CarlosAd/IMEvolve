@@ -21,9 +21,7 @@ public:
   void atribuirValorDeAdaptacao (const double novoValorDeAdaptacao);
   bool operator< (const Individuo& individuoADireita) const;
   void operator= (const Individuo& individuoADireita);
-#ifdef DEBUG
-  void imprimir ();
-#endif
+  void imprimir () const;
 };
 
 #endif

@@ -39,13 +39,14 @@ bool Individuo::operator< (const Individuo& individuoADireita) const{
 
 void Individuo::operator= (const Individuo& individuoADireita) {
   cromossomos_.assign(individuoADireita.cromossomos_.begin(), individuoADireita.cromossomos_.end());
+  valorDeAdaptacao_ = individuoADireita.adaptacao();
 }
 
-#ifdef DEBUG
-void Individuo::imprimir () {
-  for (cromo::iterator it = cromossomos_.begin(); it != cromossomos_.end(); it++) {
-    std::cout << *it;
+void Individuo::imprimir () const{
+  std::cout << "Estou em: " << this << "\t";
+  std::cout << valorDeAdaptacao_ << "\t";
+  for (int i = 0; i < cromossomos_.size(); i++) {
+    std::cout << static_cast<int>(cromossomos_[i]) << " ";
   }
-  std::cout << std::endl << valorDeAdaptacao_ << std::endl;
+  std::cout << std::endl;
 }
-#endif

@@ -1,4 +1,5 @@
 #include "geracao.h"
+#include <iostream>
 #include <algorithm>
 
 Geracao::Geracao(FuncaoObjetivo &ifuncaoObjetivo,
@@ -8,8 +9,9 @@ Geracao::Geracao(FuncaoObjetivo &ifuncaoObjetivo,
                  funcaoObjetivo (ifuncaoObjetivo),
                  seletorNatural (iseletorNatural),
                  funcaoMutacao (ifuncaoMutacao),
-                 funcaoReproducao (ifuncaoReproducao),
-                 valorDeAdaptacaoTotal(0) {
+                 funcaoReproducao (ifuncaoReproducao), valorDeAdaptacaoTotal(0),
+                 populacao(0), populacaoAuxiliar(0) {
+  std::cout << "SIZE: " << populacao.size() << std::endl;
 }
 
 void Geracao::gerarPopulacao(unsigned int itamanhoCromossomo,
