@@ -25,6 +25,7 @@ void Geracao::gerarPopulacao(unsigned int itamanhoCromossomo,
 }
 
 void Geracao::calcularAdaptacaoPopulacao() {
+//paralelizar esse método
   double valorDeAdaptacao;
   for (int indice = 0; indice < tamanhoPopulacao; indice++) {
     valorDeAdaptacao = funcaoObjetivo(populacao[indice]);
@@ -46,6 +47,7 @@ void Geracao::evoluir() {
   int numeroDeFilhos = tamanhoPopulacao - elitismo;
   Individuo pai, mae;
 
+  int indice;
   for (indice = 0; indice < numeroDeFilhos; indice++) {
     seletorNatural.selecionarParceiros(populacao, valorDeAdaptacaoTotal);
 
@@ -54,10 +56,6 @@ void Geracao::evoluir() {
 
     populacaoAuxiliar[indice] = funcaoReproducao.reproducao (pai, mae);
     funcaoMutacao.mutacao (populacaoAuxiliar[indice]);
-  }
-
-  for(int indice = 0; indice < elitismo; indice++){
-    funcaoMutacao.mutacao(populacao[indice]);
   }
 
   std::swap_ranges (populacaoAuxiliar.begin(), populacaoAuxiliar.end(), populacao.begin() + elitismo);
