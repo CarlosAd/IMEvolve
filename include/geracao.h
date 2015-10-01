@@ -19,6 +19,7 @@ protected:
 
   Populacao populacao, populacaoAuxiliar;
   unsigned int tamanhoPopulacao, elitismo;
+  double valorDeAdaptacaoTotal;
     
 
 public:
@@ -27,10 +28,11 @@ public:
           FuncaoMutacao &ifuncaoMutacao,
           FuncaoReproducao &ifuncaoReproducao);
 
-  void gerarPopulacao(const unsigned int& itamanhoCromossomo,
-                const unsigned int& itamanhoPopulacao,
-                const unsigned int& ielitismo);
+  void gerarPopulacao(unsigned int itamanhoCromossomo,
+                      unsigned int itamanhoPopulacao,
+                      unsigned int ielitismo);
 
+  void calcularAdaptacaoPopulacao();
   virtual void evoluir();
 
   Individuo& pegarMaisAdaptado();

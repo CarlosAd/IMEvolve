@@ -8,7 +8,7 @@ class SeletorNatural{
 protected:
   unsigned int pai, mae;
 public:
-  virtual void selecionarParceiros(Populacao& populacao);
+  virtual void selecionarParceiros(Populacao& populacao, double valorAdaptacaoPopulacao);
   unsigned int retornaPai();
   unsigned int retornaMae();
 

@@ -1,6 +1,10 @@
 #include "individuo.h"
 #include <algorithm>
 #include <random>
+#include <iostream>
+
+Individuo::Individuo () {
+}
 
 Individuo::Individuo (const cromo &novosCromossomos) : cromossomos_ (novosCromossomos), valorDeAdaptacao_ (0) {
 }
@@ -28,3 +32,20 @@ int Individuo::tamanho () const {
 void Individuo::atribuirValorDeAdaptacao(const double novoValorDeAdaptacao){
   valorDeAdaptacao_ = novoValorDeAdaptacao;
 }
+
+bool Individuo::operator< (const Individuo& individuoADireita) const{
+  return (valorDeAdaptacao_ < individuoADireita.adaptacao());
+}
+
+void Individuo::operator= (const Individuo& individuoADireita) {
+  cromossomos_.assign(individuoADireita.cromossomos_.begin(), individuoADireita.cromossomos_.end());
+}
+
+#ifdef DEBUG
+void Individuo::imprimir () {
+  for (cromo::iterator it = cromossomos_.begin(); it != cromossomos_.end(); it++) {
+    std::cout << *it;
+  }
+  std::cout << std::endl << valorDeAdaptacao_ << std::endl;
+}
+#endif

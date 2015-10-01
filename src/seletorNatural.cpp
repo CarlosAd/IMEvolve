@@ -1,16 +1,12 @@
 #include "seletorNatural.h"
 #include <random>
 
-void SeletorNatural::selecionarParceiros(Populacao& populacao){
+void SeletorNatural::selecionarParceiros(Populacao& populacao, double valorAdaptacaoPopulacao) {
   std::default_random_engine gerador;
-  double total = 0, escolha;
+  double escolha;
   int i, tamanho = populacao.size();
     
-  for(i = 0; i < tamanho; i++)
-  {
-    total += populacao[i].adaptacao();
-  }
-  std::uniform_real_distribution<double> rd(0.0,total);
+  std::uniform_real_distribution<double> rd(0.0,valorAdaptacaoPopulacao);
 
   escolha = rd(gerador);
 

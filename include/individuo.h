@@ -12,12 +12,18 @@ public:
   double valorDeAdaptacao_;
   
 public:
+  Individuo ();
   Individuo (const cromo &novosCromossomos);
   Individuo (const int &quantidadeDeCromossomos);
   unsigned char operator[] (const int &posicao) const;
   double adaptacao () const;
   int tamanho () const;
   void atribuirValorDeAdaptacao (const double novoValorDeAdaptacao);
+  bool operator< (const Individuo& individuoADireita) const;
+  void operator= (const Individuo& individuoADireita);
+#ifdef DEBUG
+  void imprimir ();
+#endif
 };
 
 #endif
