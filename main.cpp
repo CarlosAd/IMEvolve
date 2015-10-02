@@ -18,8 +18,20 @@ int main() {
   MinhaFuncaoObjetivo mfo;
   SeletorNatural msn;
   FuncaoReproducao mfr;
-  FuncaoMutacao mfm (0.1);
+  FuncaoMutacao mfm (0.3);
 
   Geracao minhaGeracao (mfo, msn, mfm, mfr);
-  minhaGeracao.gerarPopulacao (5, 20, 3);
+  minhaGeracao.gerarPopulacao (10, 20, 3);
+
+
+  minhaGeracao.calcularAdaptacaoPopulacao();
+  std::cout << 0 << " - " << minhaGeracao.pegarMaisAdaptado().valorDeAdaptacao_ << "\n";
+  for(int i = 0; i < 100; i++)
+  {
+    for(int j = 0; j < 1000; j++)
+    {
+      minhaGeracao.evoluir();
+    }
+    std::cout << 1000*(i+1) << " - " << minhaGeracao.pegarMaisAdaptado().valorDeAdaptacao_ << "\n";
+  }
 }

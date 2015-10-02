@@ -11,7 +11,6 @@ Geracao::Geracao(FuncaoObjetivo &ifuncaoObjetivo,
                  funcaoMutacao (ifuncaoMutacao),
                  funcaoReproducao (ifuncaoReproducao), valorDeAdaptacaoTotal(0),
                  populacao(0), populacaoAuxiliar(0) {
-  std::cout << "SIZE: " << populacao.size() << std::endl;
 }
 
 void Geracao::gerarPopulacao(unsigned int itamanhoCromossomo,
@@ -63,4 +62,14 @@ void Geracao::evoluir() {
   std::swap_ranges (populacaoAuxiliar.begin(), populacaoAuxiliar.end(), populacao.begin() + elitismo);
 
   calcularAdaptacaoPopulacao();
+}
+
+Individuo& Geracao::pegarMaisAdaptado(){
+  int indice = 0;
+  for(int i = 1; i < populacao.size(); i++){
+    if(populacao[i].adaptacao() > populacao[indice].adaptacao()){
+      indice = i;
+    }
+  return populacao[indice];
+  }
 }
