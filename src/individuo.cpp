@@ -43,7 +43,6 @@ void Individuo::operator= (const Individuo& individuoADireita) {
 }
 
 void Individuo::imprimir () const{
-  std::cout << "Estou em: " << this << "\t";
   std::cout << valorDeAdaptacao_ << "\t";
   for (int i = 0; i < cromossomos_.size(); i++) {
     std::cout << static_cast<int>(cromossomos_[i]) << " ";

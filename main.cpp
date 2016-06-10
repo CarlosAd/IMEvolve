@@ -23,7 +23,6 @@ int main() {
   Geracao minhaGeracao (mfo, msn, mfm, mfr);
   minhaGeracao.gerarPopulacao (10, 20, 3);
 
-
   minhaGeracao.calcularAdaptacaoPopulacao();
   std::cout << 0 << " - " << minhaGeracao.pegarMaisAdaptado().valorDeAdaptacao_ << "\n";
   for(int i = 0; i < 100; i++)

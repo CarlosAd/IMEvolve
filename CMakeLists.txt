@@ -14,3 +14,6 @@ add_subdirectory(src)
 
 add_executable(main main.cpp)
 target_link_libraries(main bibliotecas)
+
+add_executable(main_alberto main_alberto.cpp)
+target_link_libraries(main_alberto bibliotecas)
