@@ -1,0 +1,8 @@
+#!/bin/sh
+#Loading modules
+
+module load cray-mpich
+module swap PrgEnv-cray PrgEnv-gnu
+module load gcc/4.8.1
+module list
+echo "Modules loaded" 

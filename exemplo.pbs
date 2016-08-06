@@ -1,0 +1,7 @@
+#!/bin/ksh
+#PBS -j oe
+#PBS -l select=1:ncpus=2:mpiprocs=2
+#PBS -l walltime=48:00:00
+date
+cd $PBS_O_WORKDIR
+aprun -n2 #nome_do_executável
